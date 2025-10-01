@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "184303902472",
+    "project_id": "anthony-ad0-b25bd",
+    "storage_bucket": "anthony-ad0-b25bd.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:184303902472:android:7ab87d812cda7b9c7596bd",
+        "android_client_info": {
+          "package_name": "com.quilidev.ad0"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI-tvOAsx_rG8uxATq7hxIBXK4o2smOSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
