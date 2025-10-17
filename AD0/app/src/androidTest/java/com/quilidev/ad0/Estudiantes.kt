@@ -6,7 +6,6 @@ import kotlinx.coroutines.tasks.await
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-// ---- Modelo ----
 @JvmInline
 value class DniNie(val raw: String) {
     init {
@@ -14,7 +13,7 @@ value class DniNie(val raw: String) {
             "DNI/NIE inválido: $raw"
         }
     }
-    override fun toString() = raw.trim().uppercase()
+    override fun toString() = raw.trim  ().uppercase()
 }
 
 enum class Provincia { ALAVA, BIZKAIA, GIPUZKOA, OTRA }
@@ -41,7 +40,6 @@ data class Estudiante(
     )
 }
 
-// ---- Persistencia ----
 suspend fun guardarEstudiante(db: FirebaseFirestore, estudiante: Estudiante): Result<String> =
     runCatching {
         val docId = estudiante.dniNie.toString()
@@ -51,14 +49,18 @@ suspend fun guardarEstudiante(db: FirebaseFirestore, estudiante: Estudiante): Re
 
 // ---- Ejemplo ----
 suspend fun cargarVariosEstudiantes(db: FirebaseFirestore) {
+    val hoy = LocalDate.now()
+
     val estudiantes = listOf(
         Estudiante(DniNie("Z2005813B"), "Juan", "Quiliche Calderon", LocalDate.parse("1996-12-16"), Provincia.BIZKAIA),
         Estudiante(DniNie("X1234567T"), "Ane", "Lopez Garcia", LocalDate.parse("2005-03-21"), Provincia.GIPUZKOA),
-        Estudiante(DniNie("Y7654321M"), "Mikel", "Etxeberria", LocalDate.parse("1990-07-08"), Provincia.ALAVA)
+        Estudiante(DniNie("Y7654321M"), "Mikel", "Etxeberria", LocalDate.parse("1990-07-08"), Provincia.ALAVA),
+        Estudiante(DniNie("X0000001A"), "Lucia", "Perez Soto", hoy.minusYears(16).plusDays(1), Provincia.OTRA),
+        Estudiante(DniNie("X0000002B"), "Nikolai", "Ivanov", hoy.minusYears(30), Provincia.OTRA),
+        Estudiante(DniNie("X0000003C"), "Juan", "Sanchez Ruiz", hoy.minusYears(22), Provincia.BIZKAIA)
     )
 
     for (e in estudiantes) {
-        guardarEstudiante(db, e)
+        guardarEstudiante(db, e).getOrThrow()
     }
 }
-
