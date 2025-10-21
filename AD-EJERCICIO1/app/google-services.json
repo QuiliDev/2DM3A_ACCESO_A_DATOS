@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "422336781447",
+    "project_id": "ad-ejercicio1",
+    "storage_bucket": "ad-ejercicio1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:422336781447:android:d512d8d3a770c90e53ac22",
+        "android_client_info": {
+          "package_name": "com.example.ad_ejercicio1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNuSchSgUxHr5ZDMxWBZI-yQeFvfZwLHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
