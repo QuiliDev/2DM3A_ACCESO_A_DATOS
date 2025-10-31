@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "737818922837",
+    "project_id": "ad-auth-dbde2",
+    "storage_bucket": "ad-auth-dbde2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {F
+        "mobilesdk_app_id": "1:737818922837:android:4e772a82e6f7d596ad29dc",
+        "android_client_info": {
+          "package_name": "com.example.ad_auth"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbo8inuq9C3wOjHBWgteJkfRTSWAInr2Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
